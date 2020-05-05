@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <title>Smart View | Create Company</title>
+</head>
+
+<body>
+    
+    <div id="app">
+        <v-app id="inspire">
+            <v-content>
+              <v-container
+                class="fill-height grey lighten-3"
+                fluid
+              >
+                <v-row
+                  justify="center"
+                >
+                  <v-col
+                    cols="12"
+                    sm="8"
+                    md="4"
+                    lg="4"
+                    xl="4"
+                  >
+
+                  <v-card >
+                    <v-card-title class="justify-center">Create new company</v-card-title>
+                    <v-divider></v-divider>
+                  <v-stepper v-model="e1" class="elevation-0">
+                    <v-stepper-header>
+                      <v-stepper-step :complete="e1 > 1" step="1" color="#63B0D9">Common information</v-stepper-step>
+                
+                      <v-divider></v-divider>
+                
+                      <v-stepper-step :complete="e1 > 2" step="2" color="#63B0D9">Internet</v-stepper-step>
+                
+                      <v-divider></v-divider>
+                
+                      <v-stepper-step step="3" color="#63B0D9">Other</v-stepper-step>
+                    </v-stepper-header>
+                
+                    <v-stepper-items>
+                      <v-stepper-content step="1">
+                        <v-card>
+                
+                          <v-card-text class="pa-2">
+                            <v-text-field
+                              label="Name"
+                            ></v-text-field>
+                            <v-text-field
+                              label="Postal Addres"
+                            ></v-text-field>
+                            <v-text-field
+                              label="Zip"
+                            ></v-text-field>
+                            <v-text-field
+                              label="City"
+                            ></v-text-field>
+                            <v-text-field
+                              label="Country"
+                            ></v-text-field>
+                            <v-text-field
+                              label="VAT#"
+                            ></v-text-field>
+                            <v-text-field
+                              label="Phone"
+                            ></v-text-field>
+                            <v-text-field
+                              label="Fax"
+                            ></v-text-field>
+                          </v-card-text>
+
+                          <v-card-actions>
+                            <v-spacer></v-spacer>
+                            <v-btn
+                              color="#63B0D9"
+                              class="white--text"
+                              @click="e1 = 2"
+                            >
+                              Continue
+                            </v-btn>
+                          </v-card-actions>
+                      </v-card>
+                      </v-stepper-content>
+                
+                      <v-stepper-content step="2">
+                        <v-card>
+                
+                          <v-card-text class="pa-2">
+                            <v-text-field
+                              label="Home page"
+                            ></v-text-field>
+                          </v-card-text>
+
+                        <v-card-actions>
+                          <v-btn
+                            outlined
+                            color="#9F9F9F"
+                            @click="e1 = 1"
+                          >
+                            Back
+                          </v-btn>
+
+                          <v-spacer></v-spacer>
+                          <v-btn
+                            class="white--text" 
+                            color="#63B0D9"
+                            @click="e1 = 3"
+                          >
+                            Continue
+                          </v-btn>
+                        </v-card-actions>
+                        </v-card>
+                
+                      </v-stepper-content>
+                
+                      <v-stepper-content step="3">
+                        <v-card>
+                
+                          <v-card-text class="pa-2">
+                            <v-textarea
+                              outlined
+                              label="Notes"
+                              hide-details
+                            ></v-textarea>
+                          </v-card-text>
+
+                        <v-card-actions>
+                          <v-btn
+                            outlined
+                            color="#9F9F9F"
+                            @click="e1 = 2"
+                          >
+                            Back
+                          </v-btn>
+
+                          <v-spacer></v-spacer>
+                          <v-btn
+                            class="white--text" 
+                            color="#00CC57"
+                            @click="e1 = 3"
+                          >
+                            Save
+                          </v-btn>
+                        </v-card-actions>
+                        </v-card>
+                      
+                      </v-stepper-content>
+                    </v-stepper-items>
+                  </v-stepper>
+
+                </v-card>
+
+                  </v-col>
+                </v-row>
+              </v-container>
+            </v-content>
+          </v-app>
+    </div>
+
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            vuetify: new Vuetify(),
+            data () {
+              return {
+                e1: 1,
+              }
+            },
+        })
+    </script>
+</body>
+
+</html>
