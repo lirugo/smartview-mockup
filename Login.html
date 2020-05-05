@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+</head>
+
+<body>
+    
+    <div id="app">
+        <v-app id="inspire">
+            <v-content>
+              <v-container
+                class="fill-height grey lighten-3"
+                fluid
+              >
+                <v-row
+                  justify="center"
+                >
+                  <v-col
+                    cols="12"
+                    sm="8"
+                    md="4"
+                    lg="3"
+                  >
+                    <v-card class="elevation-2">
+                        <v-card-title>
+                            <v-img
+                                src="/logo_light.svg"
+                            >
+                          </v-img>
+                        </v-card-title>
+                        <v-divider></v-divider>
+                      <v-card-text>
+                        <v-form>
+                            <v-text-field
+                              label="Login"
+                              name="login"
+                              prepend-icon="mdi-account"
+                              type="text"
+                            ></v-text-field>
+                            <v-text-field
+                                id="password"
+                                label="Password"
+                                name="password"
+                                prepend-icon="mdi-lock-question"
+                                type="password"
+                            ></v-text-field>
+                        </v-form>
+                      </v-card-text>
+                      <v-card-actions>
+                        <v-btn color="#63b0d9" block class="white--text">Sign in</v-btn>
+                      </v-card-actions>
+                    </v-card>
+                  </v-col>
+                </v-row>
+              </v-container>
+            </v-content>
+          </v-app>
+    </div>
+
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            vuetify: new Vuetify(),
+        })
+    </script>
+</body>
+
+</html>
