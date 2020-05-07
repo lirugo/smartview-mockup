@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <title>Smart View | Create Company</title>
+</head>
+
+<body>
+    
+  <div id="app">
+    <v-app>
+        <v-content class="backgroundColor">
+            <v-container>
+
+                <v-row
+                        justify="center"
+                >
+                <v-col
+                        cols="12"
+                        sm="8"
+                        md="4"
+                        lg="4"
+                        xl="4"
+                >
+                    <v-card
+                            class="mx-auto"
+                            outlined
+                    >
+                        <v-card-title class="justify-center">Dorso</v-card-title>
+                        <v-divider></v-divider>
+                        <v-card-text>
+                          <v-row>
+                            <v-col cols="12" sm="12" md="6">
+                              <v-text-field dense
+                              label="Name"
+                            >
+                            </v-text-field>
+                            <v-text-field dense
+                              label="Postal Address"
+                            >
+                            </v-text-field>
+                            <v-text-field dense
+                              label="Zip"
+                            >
+                            </v-text-field>
+                            <v-text-field dense
+                              label="City"
+                            >
+                            </v-text-field>
+                            <v-text-field dense
+                              label="Country"
+                            >
+                            </v-text-field>
+                            <v-text-field dense
+                              label="VAT#"
+                            >
+                            </v-text-field>
+                            </v-col>
+
+                            <v-col cols="12" sm="12" md="6">
+                              <v-text-field dense
+                            label="Phone"
+                          >
+                          </v-text-field>
+                          <v-text-field dense
+                            label="Fax"
+                          >
+                          </v-text-field>
+
+                          <v-text-field dense
+                            label="Website"
+                            v-model="website"
+                            append-outer-icon="fa-external-link-square"
+                            @click:append-outer="window.open(website, '_blank')"
+                          >
+                          </v-text-field>
+
+                          <v-textarea dense rows="4" outlined
+                            label="Notes"
+                          >
+                          </v-textarea>
+                            </v-col>
+
+                          </v-row>
+                        </v-card-text>
+                    </v-card>
+                </v-col>
+                <v-col
+                        cols="12"
+                        sm="8"
+                        md="4"
+                        lg="4"
+                        xl="4"
+                >
+                    <v-card
+                            class="mx-auto"
+                            outlined
+                    >
+                        <v-card-title class="justify-center">Contacts</v-card-title>
+                        <v-divider></v-divider>
+                        <v-card-text>
+                          <v-simple-table>
+                            <template v-slot:default>
+                              <thead>
+                                <tr>
+                                  <th class="text-left">Name</th>
+                                  <th class="text-left">Title</th>
+                                  <th class="text-left">Responsibility</th>
+                                  <th class="text-left">Phone</th>
+                                  <th class="text-left">Cellphone</th>
+                                  <th class="text-left">Email</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr v-for="item in contacts" :key="item.name">
+                                  <td>{{ item.name }}</td>
+                                  <td>{{ item.title }}</td>
+                                  <td>{{ item.responsibility }}</td>
+                                  <td>{{ item.phone }}</td>
+                                  <td>{{ item.cellPhone }}</td>
+                                  <td>{{ item.email }}</td>
+                                </tr>
+                              </tbody>
+                            </template>
+                          </v-simple-table>
+                        </v-card-text>
+                    </v-card>
+                </v-col>
+                </v-row>
+            </v-container>
+        </v-content>
+    </v-app>
+</div>
+
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+    <script src="https://use.fontawesome.com/a8a297f82c.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            vuetify: new Vuetify(),
+            data () {
+              return {
+                e1: 1,
+                website: 'https://google.com',
+                contacts: [
+                  {
+                    name: 'Frozen',
+                    title: 'title',
+                    responsibility: 'Responsibility',
+                    phone: 'phone',
+                    cellPhone: 'cellPhone',
+                    email: 'email',
+                    name: 'Frozen',
+                  },
+                ],
+              }
+            },
+        })
+    </script>
+</body>
+
+</html>
